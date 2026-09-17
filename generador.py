@@ -1,0 +1,50 @@
+from datetime import datetime
+
+# Fecha actual para mostrar frescura diaria
+hoy = datetime.now().strftime("%d de %B de %Y")
+
+# Contenido HTML automatizado
+html_contenido = f"""
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolsa de Empleos Diaria - {hoy}</title>
+    <style>
+        body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 20px; background: #f4f4f9; color: #333; }}
+        .container {{ max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }}
+        h1 {{ color: #0066cc; font-size: 24px; }}
+        .job {{ border-bottom: 1px solid #ddd; padding: 15px 0; }}
+        .btn {{ background: #28a745; color: white; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block; margin-top: 8px; font-weight: bold; }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Oportunidades de Empleo y Remotos</h1>
+        <p><em>Actualizado automáticamente el: {hoy}</em></p>
+        <hr>
+        
+        <div class="job">
+            <h3>Asistente Virtual Bilingüe (Remoto)</h3>
+            <p><strong>Empresa:</strong> Global Solutions | <strong>Salario:</strong> Competitivo</p>
+            <p>Buscamos personal con manejo de inglés avanzado para soporte administrativo diario.</p>
+            <a href="#" class="btn">Postularme</a>
+        </div>
+
+        <div class="job">
+            <h3>Analista de Datos Junior</h3>
+            <p><strong>Empresa:</strong> TechCorp | <strong>Modalidad:</strong> Híbrido</p>
+            <p>Manejo de bases de datos y reportes operativos diarios.</p>
+            <a href="#" class="btn">Postularme</a>
+        </div>
+    </div>
+</body>
+</html>
+"""
+
+# Guarda el resultado como index.html para que la web lo lea
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_contenido)
+
+print("¡Página generada con éxito!")
